@@ -18,4 +18,4 @@ Verify upon clicking 'Social media link Twitter' user is redirect to Twitter pag
 Verify upon clicking 'Social media link YouTube' user is redirect to Youtube page.
 Verify upon clicking 'Social media link Google+ ' user is redirect to Google+ page.
 Verify upon entering a valid email user can receive newsletters.
-Verify upon User can’t receive newsletters whithout Invalid email address.'Invalid email address..' message is shown.
+Verify upon User can’t receive newsletters whithout Invalid email address.'Invalid email address..' message is shown.g
