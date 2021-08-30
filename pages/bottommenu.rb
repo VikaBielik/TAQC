@@ -1,51 +1,57 @@
 class Bottommenu < BasePage
 
+ #Categories
     def women
-      browser.find_element(name: 'Women')
+     browser.find_element(id: 'footer')
+     #xpath: "//a[@class='selected']"
     end
-  
-    def Specials
+
+    #def women_botton
+    # browser.find_element(id: 'footer') 
+    #end 
+
+  #Information
+    def specials
       browser.find_element(name: 'Specials')
     end
   
-    def New products
+    def new_products
       browser.find_element(name: 'New products')
     end
 
-    def Our stores
+    def our_stores
         browser.find_element(name: 'Our stores')
     end
     
-    def Contact us
+    def contact_us
         browser.find_element(name: 'Contact us')
     end
 
-    def Terms and conditions of use
+    def terms_and_conditions_of_use
         browser.find_element(name: 'Terms and conditions of use')
     end
 
-    def About us
+    def about_us
         browser.find_element(name: 'About us')
     end   
-
-    def My orders
+ #My account
+    def my_orders
         browser.find_element(name: 'My orders')
     end
 
-    def My credit slips
+    def my_credit_slips
         browser.find_element(name: 'My credit slips')
     end
 
-    def My addresses
-        browser.find_element(name: 'My personal info')
+    def my_addresses
+        browser.find_element(name: 'My addresses')
     end
 
-    def My personal info
+    def my_personal_info
         browser.find_element(name: 'My personal info')
     end
-
-    def clik_on
-        sign_in_button.click
-      end
-      
+    
+    #def botton.click
+        #browser.find_element(xpath: "//a[@class='selected']")
+      #end
 end
