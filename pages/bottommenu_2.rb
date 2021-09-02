@@ -46,8 +46,15 @@ class Botommmenu_2 #url в браузере будет иметь в себе т
     def on_page? # addresses My addresses
         browser.current_url.include? 'addresses'
     end
-    
+
     def on_page? # identity My personal info
         browser.current_url.include? 'identity'
     end
 end
+
+
+#context 'UI bottom check'
+   # it 'verifies that women button is displayed'
+        #expect(botton.women_button.displayed?).to be(true)
+    #end 
+  #end
