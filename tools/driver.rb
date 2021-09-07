@@ -18,12 +18,12 @@ def browser
   $driver
 end
 
-def get_home_page
-  max_tries = 5
-  begin
-    browser.get(HOME_PAGE)
-  rescue
-    max_tries -= 1
-    retry while max_tries > 0
-  end
-end
+#def get_home_page
+ # max_tries = 5
+  #begin
+    #browser.get(HOME_PAGE)
+  #rescue
+   # max_tries -= 1
+    #retry while max_tries > 0
+ #end
+#end
