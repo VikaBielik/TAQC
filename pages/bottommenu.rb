@@ -1,51 +1,67 @@
-class Bottommenu < BasePage
+Class Bottommenu < BasePage
 
-    def women
-      browser.find_element(name: 'Women')
-    end
-  
-    def Specials
-      browser.find_element(name: 'Specials')
-    end
-  
-    def New products
-      browser.find_element(name: 'New products')
+ #Categories
+    def categories_conteiner
+     browser.find_element(id: 'footer')
     end
 
-    def Our stores
-        browser.find_element(name: 'Our stores')
-    end
-    
-    def Contact us
-        browser.find_element(name: 'Contact us')
+    def women_button
+        categories_conteiner.find_element(css: '.list a')
+    end 
+
+
+  #Information
+    def specials
+      browser.find_element(class: 'product-listing')
     end
 
-    def Terms and conditions of use
-        browser.find_element(name: 'Terms and conditions of use')
+    def new_products
+      browser.find_element(class: 'product-listing')
     end
 
-    def About us
-        browser.find_element(name: 'About us')
+    def our_stores
+        browser.find_element(class: 'product-listing')
+    end
+
+    def contact_us
+        browser.find_element(class: 'product-listing')
+    end
+
+    def terms_and_conditions_of_use
+        browser.find_element(class: 'product-listing')
+    end
+
+    def about_us
+        browser.find_element(class: 'product-listing')
     end   
-
-    def My orders
+ #My account
+    def my_orders
         browser.find_element(name: 'My orders')
     end
 
-    def My credit slips
+    def my_credit_slips
         browser.find_element(name: 'My credit slips')
     end
 
-    def My addresses
+    def my_addresses
+        browser.find_element(name: 'My addresses')
+    end
+
+    def my_personal_info
         browser.find_element(name: 'My personal info')
     end
 
-    def My personal info
-        browser.find_element(name: 'My personal info')
+    def button_spesial
+        browser.find_element(xpath: '//li[@class = "item"]/a[@title = "Specials"]')
     end
-
-    def clik_on
-        sign_in_button.click
-      end
-      
+    def button_new_products
+        browser.find_element(xpath: '//li[@class = "item"]/a[@title = "New products"]')
+    end
 end
+
+
+
+
+#xpath: "//a[@class='selected']"
+
+#xpath: '//div[@class = "breadcrumb clearfix"]/span[@class = "navigation_page]' 
