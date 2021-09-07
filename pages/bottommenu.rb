@@ -9,12 +9,11 @@ Class Bottommenu < BasePage
         categories_conteiner.find_element(css: '.list a')
     end 
 
-
   #Information
     def specials
       browser.find_element(class: 'product-listing')
     end
-
+  
     def new_products
       browser.find_element(class: 'product-listing')
     end
@@ -22,7 +21,7 @@ Class Bottommenu < BasePage
     def our_stores
         browser.find_element(class: 'product-listing')
     end
-
+    
     def contact_us
         browser.find_element(class: 'product-listing')
     end
@@ -49,7 +48,7 @@ Class Bottommenu < BasePage
 
     def my_personal_info
         browser.find_element(name: 'My personal info')
-    end
+    end     
 
     def button_spesial
         browser.find_element(xpath: '//li[@class = "item"]/a[@title = "Specials"]')
@@ -61,7 +60,9 @@ end
 
 
 
-
 #xpath: "//a[@class='selected']"
 
 #xpath: '//div[@class = "breadcrumb clearfix"]/span[@class = "navigation_page]' 
+
+#xpath: '//div[@class = "breadcrumb clearfix"]/span[@class = "navigation_page]'
+
