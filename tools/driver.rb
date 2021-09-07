@@ -18,8 +18,6 @@ def browser
   $driver
 end
 
-<<<<<<< HEAD
-=======
 def get_home_page
   max_tries = 5
   begin
@@ -29,4 +27,3 @@ def get_home_page
     retry while max_tries > 0
   end
 end
->>>>>>> upstream/master

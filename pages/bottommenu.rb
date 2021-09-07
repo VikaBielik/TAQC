@@ -32,7 +32,10 @@ Class Bottommenu < BasePage
 
     def about_us
         browser.find_element(class: 'product-listing')
-    end   
+     end
+    end
+
+
  #My account
     def my_orders
         browser.find_element(name: 'My orders')
@@ -53,11 +56,11 @@ Class Bottommenu < BasePage
     def button_spesial
         browser.find_element(xpath: '//li[@class = "item"]/a[@title = "Specials"]')
     end
+
     def button_new_products
         browser.find_element(xpath: '//li[@class = "item"]/a[@title = "New products"]')
     end
 end
-
 
 
 #xpath: "//a[@class='selected']"
