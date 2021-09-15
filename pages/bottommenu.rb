@@ -60,6 +60,7 @@ Class Bottommenu < BasePage
     def button_new_products
         browser.find_element(xpath: '//li[@class = "item"]/a[@title = "New products"]')
     end
+    
 end
 
 
