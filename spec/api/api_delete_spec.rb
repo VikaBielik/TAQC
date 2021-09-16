@@ -1,6 +1,7 @@
 require_relative '../spec_helper'
 require_relative 'api_client.rb'
 require 'securerandom'
+#rspec spec/api/api_delete_spec.rb  --color --format doc
 
 RSpec.describe 'DELETE method ' do
 
@@ -8,53 +9,45 @@ RSpec.describe 'DELETE method ' do
   body = app_cl.generate_random_body
 
   before(:all) do
+
      app_cl.create_user(body)
+     
   end
 
-  context 'verify username passed to enpoint can be valid and invalid ' do
+  context 'Delete method checking' do
 
-    it 'verifies delete existing user' do  #1
-      response = app_cl.delete_user(body[:username])
+    it 'verifies delete existing user' do  
+      app_cl.user_login(body[:username], body[:password])
+      app_cl.user_logout
+      app_cl.delete_user(body[:username])
+      response = app_cl.get_user(body[:username])
       expect(response.status).to eq(200)
     end
-    
-    it 'verifies delete not-existing user' do   #2
-        app_cl.create_user(body)
-        app_cl.delete_user(body[:username])
-        response = app_cl.delete_user(body[:username])
-        expect(response.status).to eq(404)
-    end
 
-    it 'verifies delete valid username' do   #3
-        body[:username] = 'ihavetoolong'
-        app_cl.create_user(body)
-        response = app_cl.delete_user(body[:username])
-        expect(response.status).to eq(200)
+    it 'verifies delete non-existing user' do  
+      app_cl.delete_user("user_#{SecureRandom.hex}")
+      response = app_cl.get_user(body[:username])
+      expect(response.status).to eq(200)
     end
+  end
 
-    it 'verifies delete invalid username' do  #to long 4
-        body[:username] = 'i'* 51
-        app_cl.create_user(body)
-        response = app_cl.delete_user(body[:username])
-        expect(response.status).to eq(400)
-    end
+  context 'verifies work with invalid data' do
 
-    it 'verifies delete invalid username' do #to short 5
-      body[:username] = 'iI'
+    data = ['A'*51,
+    'Ia',
+    '&ks#jdkca',
+    '163738jfkdl']
+    data.each{|username| 
+
+    it 'verifies delete existed user invalid username' do  
       app_cl.create_user(body)
-      response = app_cl.delete_user(body[:username])
-      expect(response.status).to eq(400)
-   end
-    
-   it 'verifies delete invalid username' do #6
-    body[:username] = 'iI85&_1'
-    app_cl.create_user(body)
-    response = app_cl.delete_user(body[:username])
-    expect(response.status).to eq(400)
- end
+      body[:username] = username
+      app_cl.update_user(body[:username], body)
+      response = app_cl.delete_user(body[username])
+      expect(response.status).to eq(405)
+    end}
 
   end
 
 end
 
-#rspec spec/api/api_delete_spec.rb  --color --format doc
